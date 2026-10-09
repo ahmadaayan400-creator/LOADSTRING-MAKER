@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>AAYAN LOADSTRING MAKER</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:18px;
+
+    background:
+        radial-gradient(circle at 20% 20%,#21004d55,transparent 35%),
+        radial-gradient(circle at 80% 80%,#003b5555,transparent 35%),
+        #030408;
+
+    color:white;
+    font-family:Arial,Helvetica,sans-serif;
+    overflow-x:hidden;
+}
+
+/* =========================================
+   RGB BACKGROUND
+========================================= */
+
+.rgb-light{
+    position:fixed;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+
+    background:conic-gradient(
+        #ff0055,
+        #7b00ff,
+        #008cff,
+        #00ffe1,
+        #00ff6a,
+        #ffe600,
+        #ff0055
+    );
+
+    filter:blur(100px);
+    opacity:.12;
+
+    animation:spin 10s linear infinite;
+
+    pointer-events:none;
+}
+
+.rgb-light.one{
+    top:-220px;
+    left:-220px;
+}
+
+.rgb-light.two{
+    bottom:-220px;
+    right:-220px;
+    animation-direction:reverse;
+}
+
+@keyframes spin{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* =========================================
+   MAIN CARD
+========================================= */
+
+.wrapper{
+    width:100%;
+    max-width:620px;
+
+    position:relative;
+
+    padding:1px;
+
+    border-radius:25px;
+
+    background:linear-gradient(
+        90deg,
+        #ff0055,
+        #7b00ff,
+        #008cff,
+        #00ffe1,
+        #00ff6a,
+        #ff0055
+    );
+
+    background-size:400% 100%;
+
+    animation:borderRGB 7s linear infinite;
+
+    box-shadow:
+        0 0 30px #7b00ff22,
+        0 0 80px #008cff18;
+}
+
+@keyframes borderRGB{
+    0%{
+        background-position:0% 50%;
+    }
+
+    100%{
+        background-position:400% 50%;
+    }
+}
+
+.card{
+    background:
+        linear-gradient(
+            145deg,
+            #0a0b11,
+            #05060a
+        );
+
+    border-radius:24px;
+
+    padding:30px 25px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* =========================================
+   TOP LINE
+========================================= */
+
+.top-line{
+    position:absolute;
+    top:0;
+    left:10%;
+    width:80%;
+    height:1px;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #00eaff,
+        #ff00d4,
+        transparent
+    );
+
+    box-shadow:
+        0 0 15px #00eaff;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo{
+    text-align:center;
+
+    font-size:30px;
+    font-weight:1000;
+
+    letter-spacing:4px;
+
+    background:linear-gradient(
+        90deg,
+        #ff0055,
+        #9b00ff,
+        #00aaff,
+        #00ffe1,
+        #ff0055
+    );
+
+    background-size:300%;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    animation:logoRGB 4s linear infinite;
+
+    text-shadow:
+        0 0 25px #7b00ff33;
+}
+
+@keyframes logoRGB{
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:300%;
+    }
+}
+
+.subtitle{
+    text-align:center;
+
+    margin-top:7px;
+
+    color:#646875;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status-pill{
+    width:max-content;
+
+    margin:18px auto 25px;
+
+    padding:7px 13px;
+
+    border-radius:30px;
+
+    background:#07130f;
+
+    border:1px solid #00ff9d33;
+
+    color:#00ff9d;
+
+    font-size:10px;
+
+    letter-spacing:1.5px;
+
+    box-shadow:
+        0 0 15px #00ff9d0c;
+}
+
+.status-dot{
+    display:inline-block;
+
+    width:6px;
+    height:6px;
+
+    background:#00ff9d;
+
+    border-radius:50%;
+
+    margin-right:6px;
+
+    box-shadow:
+        0 0 8px #00ff9d;
+
+    animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        opacity:.3;
+        transform:scale(.7);
+    }
+}
+
+/* =========================================
+   LABEL
+========================================= */
+
+.label{
+    display:block;
+
+    margin-bottom:9px;
+
+    color:#858996;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:1.8px;
+}
+
+/* =========================================
+   INPUT BOX
+========================================= */
+
+.input-wrap{
+    position:relative;
+}
+
+.input{
+    width:100%;
+
+    height:55px;
+
+    padding:
+        0 16px
+        0 16px;
+
+    border-radius:13px;
+
+    border:1px solid #222633;
+
+    outline:none;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0b0d13,
+            #080a10
+        );
+
+    color:#fff;
+
+    font-size:13px;
+
+    transition:.25s;
+
+    box-shadow:
+        inset 0 0 20px #00000055;
+}
+
+.input::placeholder{
+    color:#414550;
+}
+
+.input:focus{
+    border-color:#8c00ff;
+
+    box-shadow:
+        0 0 0 2px #8c00ff0d,
+        0 0 25px #8c00ff18;
+}
+
+/* =========================================
+   GENERATE BUTTON
+========================================= */
+
+.generate{
+    width:100%;
+
+    height:55px;
+
+    margin-top:14px;
+
+    border:none;
+
+    border-radius:13px;
+
+    cursor:pointer;
+
+    color:white;
+
+    font-size:12px;
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    background:linear-gradient(
+        90deg,
+        #7200ff,
+        #006eff,
+        #00c8ff
+    );
+
+    box-shadow:
+        0 8px 25px #006eff20;
+
+    transition:
+        transform .15s,
+        box-shadow .2s;
+}
+
+.generate:hover{
+    box-shadow:
+        0 8px 35px #006eff45;
+}
+
+.generate:active{
+    transform:scale(.97);
+}
+
+/* =========================================
+   RESULT
+========================================= */
+
+.result{
+    display:none;
+
+    margin-top:23px;
+
+    animation:appear .3s ease;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.result-header{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:9px;
+}
+
+.result-title{
+    color:#858996;
+
+    font-size:10px;
+
+    font-weight:bold;
+
+    letter-spacing:1.8px;
+}
+
+.success{
+    color:#00ff9d;
+
+    font-size:9px;
+
+    letter-spacing:1px;
+}
+
+.output{
+    width:100%;
+
+    min-height:105px;
+
+    resize:none;
+
+    outline:none;
+
+    border-radius:13px;
+
+    border:1px solid #18251f;
+
+    background:#040807;
+
+    color:#00ff9d;
+
+    padding:15px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size:12px;
+
+    line-height:1.6;
+
+    box-shadow:
+        inset 0 0 20px #000;
+}
+
+/* =========================================
+   COPY BUTTON
+========================================= */
+
+.copy{
+    width:100%;
+
+    height:50px;
+
+    margin-top:10px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    border:1px solid #00ff9d44;
+
+    background:
+        linear-gradient(
+            90deg,
+            #06130e,
+            #081912
+        );
+
+    color:#00ff9d;
+
+    font-size:11px;
+
+    font-weight:900;
+
+    letter-spacing:1.5px;
+
+    transition:.2s;
+}
+
+.copy:hover{
+    background:#00ff9d12;
+
+    box-shadow:
+        0 0 20px #00ff9d18;
+}
+
+.copy:active{
+    transform:scale(.97);
+}
+
+/* =========================================
+   CLEAR BUTTON
+========================================= */
+
+.clear{
+    display:block;
+
+    margin:14px auto 0;
+
+    border:none;
+
+    background:none;
+
+    color:#464a55;
+
+    font-size:10px;
+
+    cursor:pointer;
+
+    letter-spacing:1px;
+
+    transition:.2s;
+}
+
+.clear:hover{
+    color:#ff3b67;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer{
+    text-align:center;
+
+    margin-top:25px;
+
+    color:#333743;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+}
+
+.footer span{
+    color:#555967;
+}
+
+/* =========================================
+   TOAST
+========================================= */
+
+.toast{
+    position:fixed;
+
+    left:50%;
+
+    bottom:25px;
+
+    transform:
+        translate(-50%,20px);
+
+    padding:11px 17px;
+
+    border-radius:10px;
+
+    background:#0a1110;
+
+    border:1px solid #00ff9d44;
+
+    color:#00ff9d;
+
+    font-size:10px;
+
+    letter-spacing:1px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.25s;
+
+    box-shadow:
+        0 0 25px #00ff9d18;
+
+    z-index:100;
+}
+
+.toast.show{
+    opacity:1;
+
+    transform:
+        translate(-50%,0);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:480px){
+
+    body{
+        padding:12px;
+    }
+
+    .card{
+        padding:25px 17px;
+    }
+
+    .logo{
+        font-size:24px;
+        letter-spacing:3px;
+    }
+
+    .subtitle{
+        font-size:8px;
+        letter-spacing:2px;
+    }
+
+    .input,
+    .generate{
+        height:53px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="rgb-light one"></div>
+<div class="rgb-light two"></div>
+
+<div class="wrapper">
+
+<div class="card">
+
+<div class="top-line"></div>
+
+<!-- LOGO -->
+
+<div class="logo">
+    AAYAN
+</div>
+
+<div class="subtitle">
+    Loadstring Maker • V2
+</div>
+
+<!-- STATUS -->
+
+<div class="status-pill">
+    <span class="status-dot"></span>
+    SYSTEM ONLINE
+</div>
+
+<!-- URL INPUT -->
+
+<label class="label">
+    SCRIPT URL
+</label>
+
+<div class="input-wrap">
+
+<input
+    id="urlInput"
+    class="input"
+    type="text"
+    placeholder="Paste your raw script URL here..."
+    autocomplete="off"
+    spellcheck="false"
+>
+
+</div>
+
+<!-- GENERATE -->
+
+<button
+    class="generate"
+    id="generateBtn"
+    onclick="generateLoadstring()"
+>
+    ⚡ GENERATE LOADSTRING
+</button>
+
+<!-- RESULT -->
+
+<div
+    class="result"
+    id="result"
+>
+
+<div class="result-header">
+
+<div class="result-title">
+    GENERATED CODE
+</div>
+
+<div class="success">
+    ● READY
+</div>
+
+</div>
+
+<textarea
+    id="output"
+    class="output"
+    readonly
+></textarea>
+
+<button
+    class="copy"
+    onclick="copyLoadstring()"
+>
+    ◈ COPY & CLEAR
+</button>
+
+</div>
+
+<!-- CLEAR -->
+
+<button
+    class="clear"
+    onclick="clearEverything()"
+>
+    CLEAR ALL
+</button>
+
+<div class="footer">
+    AAYAN V2 <span>•</span> FUTURE IS CODE
+</div>
+
+</div>
+</div>
+
+<!-- TOAST -->
+
+<div
+    class="toast"
+    id="toast"
+>
+    COPIED • CLEARED
+</div>
+
+
+<script>
+
+/* =========================================
+   ELEMENTS
+========================================= */
+
+const urlInput =
+    document.getElementById("urlInput");
+
+const output =
+    document.getElementById("output");
+
+const result =
+    document.getElementById("result");
+
+const toast =
+    document.getElementById("toast");
+
+
+/* =========================================
+   GENERATE
+========================================= */
+
+function generateLoadstring(){
+
+    let url =
+        urlInput.value.trim();
+
+    if(!url){
+
+        showToast(
+            "⚠ ENTER A URL"
+        );
+
+        urlInput.focus();
+
+        return;
+    }
+
+    /*
+       Basic URL validation
+    */
+
+    try{
+
+        new URL(url);
+
+    }catch(error){
+
+        showToast(
+            "⚠ ENTER VALID RAW URL             ⚠"
+        );
+
+        urlInput.focus();
+
+        return;
+    }
+
+    /*
+       Escape characters
+    */
+
+    url = url
+        .replace(/\\/g,"\\\\")
+        .replace(/"/g,'\\"');
+
+    /*
+       Generate Lua
+    */
+
+    const loadstring =
+        'loadstring(game:HttpGet("' +
+        url +
+        '"))()';
+
+    output.value =
+        loadstring;
+
+    result.style.display =
+        "block";
+
+    /*
+       Scroll result into view
+    */
+
+    setTimeout(()=>{
+
+        result.scrollIntoView({
+            behavior:"smooth",
+            block:"nearest"
+        });
+
+    },100);
+
+}
+
+
+/* =========================================
+   COPY + CLEAR
+========================================= */
+
+async function copyLoadstring(){
+
+    const code =
+        output.value;
+
+    if(!code){
+
+        showToast(
+            "⚠ NOTHING TO COPY"
+        );
+
+        return;
+    }
+
+    try{
+
+        await navigator.clipboard.writeText(
+            code
+        );
+
+    }catch(error){
+
+        /*
+           Fallback for browsers
+           where clipboard API
+           isn't available.
+        */
+
+        output.focus();
+
+        output.select();
+
+        document.execCommand(
+            "copy"
+        );
+    }
+
+    /*
+       IMPORTANT:
+       Copy ke baad sab clear
+    */
+
+    urlInput.value = "";
+
+    output.value = "";
+
+    result.style.display =
+        "none";
+
+    urlInput.focus();
+
+    showToast(
+        "✓ COPIED • FORM CLEARED"
+    );
+
+}
+
+
+/* =========================================
+   CLEAR ALL
+========================================= */
+
+function clearEverything(){
+
+    urlInput.value = "";
+
+    output.value = "";
+
+    result.style.display =
+        "none";
+
+    urlInput.focus();
+
+    showToast(
+        "✓ CLEARED 😼"
+    );
+
+}
+
+
+/* =========================================
+   TOAST
+========================================= */
+
+let toastTimer;
+
+function showToast(message){
+
+    clearTimeout(toastTimer);
+
+    toast.textContent =
+        message;
+
+    toast.classList.add(
+        "show"
+    );
+
+    toastTimer =
+        setTimeout(()=>{
+
+            toast.classList.remove(
+                "show"
+            );
+
+        },1800);
+
+}
+
+
+/* =========================================
+   ENTER KEY
+========================================= */
+
+urlInput.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Enter"){
+
+            generateLoadstring();
+
+        }
+
+    }
+);
+
+
+/* =========================================
+   PREVENT SPACE AT START
+========================================= */
+
+urlInput.addEventListener(
+    "input",
+    function(){
+
+        if(
+            this.value.length === 1 &&
+            this.value === " "
+        ){
+
+            this.value = "";
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
